@@ -14,7 +14,7 @@ package domain
 
 type Order struct {
 	OrderID string
-	Skus    []SKU
+	Skus    []*SKU
 }
 
 type SKU struct {
@@ -25,5 +25,6 @@ type SKU struct {
 type Service interface {
 	AddOrder(Order) (string, error)
 	ShipmentUpdate([]string, string, string) (string, error)
-	GetShipment(string) ([]SKU, error)
+	GetShipment(string) ([]*SKU, error)
+	Validate([]string, string, string) (bool, error)
 }
