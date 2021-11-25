@@ -93,3 +93,40 @@ Modify the main.go to cover any use case from the readme file above.
 
 Run `go run .`
 
+## Tests
+
+    === RUN   TestAddOrderSuccess
+    --- PASS: TestAddOrderSuccess (0.00s)
+    === RUN   TestAddOrderNoOrderID
+    --- PASS: TestAddOrderNoOrderID (0.00s)
+    === RUN   TestGetshipmentSuccess
+    --- PASS: TestGetshipmentSuccess (0.00s)
+    === RUN   TestGetShipmentWithoutOrderID
+    --- PASS: TestGetShipmentWithoutOrderID (0.00s)
+    === RUN   TestGetShipmentInvalidOrderID
+    --- PASS: TestGetShipmentInvalidOrderID (0.00s)
+    === RUN   TestValidateEmptySKUList
+    --- PASS: TestValidateEmptySKUList (0.00s)
+    === RUN   TestValidateEmptyShipTrackID
+    --- PASS: TestValidateEmptyShipTrackID (0.00s)
+    === RUN   TestValidateEmptyOrderId
+    --- PASS: TestValidateEmptyOrderId (0.00s)
+    === RUN   TestValidateInvalidOrderId
+    --- PASS: TestValidateInvalidOrderId (0.00s)
+    === RUN   TestValidateMoreSKUs
+    --- PASS: TestValidateMoreSKUs (0.00s)
+    === RUN   TestValidateMoreSKUThanRoomForUpdate
+    --- PASS: TestValidateMoreSKUThanRoomForUpdate (0.00s)
+    === RUN   TestValidateSuccess
+    --- PASS: TestValidateSuccess (0.00s)
+    === RUN   TestShipmentUpdateSuccess
+    --- PASS: TestShipmentUpdateSuccess (0.00s)
+    === RUN   TestShipmentUpdateSuccessDifferentTimestamp
+    --- PASS: TestShipmentUpdateSuccessDifferentTimestamp (0.00s)
+    === RUN   TestShipmentUpdateSuccessFollowedByValidAndInvalid
+    --- PASS: TestShipmentUpdateSuccessFollowedByValidAndInvalid (0.00s)
+    === RUN   TestShipmentUpdateSuccessFollowedByValidAndInvalid2
+    --- PASS: TestShipmentUpdateSuccessFollowedByValidAndInvalid2 (0.00s)
+    PASS
+    coverage: 100.0% of statements in .
+    ok      github.com/sreeks87/ordermgmt/order/tests       0.345s  coverage: 100.0% of statements in .
