@@ -1,8 +1,4 @@
-https://www.websequencediagrams.com/
-
-------
-
-Problem Statement
+### Problem Statement
 
 An online order contains line items. Each line item is identified by a product SKU and its quantity.
 
@@ -64,7 +60,7 @@ cover solution with unit tests
 * no interaction with network or database is needed. A solution that keeps everything in memory is sufficient.
 
 
-### To run locally
+# To run locally
 
 This module is built in `go 1.16`
 
