@@ -7,6 +7,9 @@ import (
 	"github.com/sreeks87/ordermgmt/order/domain/service"
 )
 
+// This file test only one use case from the problem statement
+// you may modify this file or run the tests that cover most of the
+// cases mentioned in the problem statement
 func main() {
 
 	inmemoryRepo := make(map[string]*domain.Order)
@@ -42,16 +45,19 @@ func main() {
 	// Shipment with tracking tracking-2 ships SKU1
 	// Updates for a Shipment can arrive in multiple parts. For example:
 
-	// # update 1 at timestamp-1
+	// # update 1 at timestamp-1 --success
 	if oid, e = svc.ShipmentUpdate([]string{sku1.SKUId}, "Tracking1", o1.OrderID); e != nil {
 		fmt.Println(e)
 	}
 	fmt.Println("updated shipment for ", oid)
+	// # update 2 at timestamp-2 --sucess
 	if oid, e = svc.ShipmentUpdate([]string{sku2.SKUId}, "Tracking1", o1.OrderID); e != nil {
 		fmt.Println(e)
 	}
 	fmt.Println("updated shipment for ", oid)
 
+	// invalid sku id SKU3 is passed thereby making the request a combination of valid and invalid
+	//  and therefore the request will be rejected. --failure
 	if oid, e = svc.ShipmentUpdate([]string{"SKU3", sku1.SKUId}, "Tracking1", o1.OrderID); e != nil {
 		fmt.Println(e)
 	}

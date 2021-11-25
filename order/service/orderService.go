@@ -19,6 +19,9 @@ func NewOrderSvc(r map[string]*domain.Order) domain.Service {
 
 // Adds the order into the DB
 func (o *orderSvc) AddOrder(order domain.Order) (string, error) {
+	if order.OrderID == "" {
+		return "", errors.New("order should contain an order ID")
+	}
 	o.repo[order.OrderID] = &order
 	return order.OrderID, nil
 }
@@ -41,6 +44,9 @@ func (o *orderSvc) ShipmentUpdate(skus []string, shipid string, orderid string) 
 }
 
 func (o *orderSvc) GetShipment(orderid string) ([]*domain.SKU, error) {
+	if orderid == "" {
+		return nil, errors.New("no order ID specified")
+	}
 	if val, ok := o.repo[orderid]; ok {
 		return val.Skus, nil
 	}

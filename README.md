@@ -63,3 +63,16 @@ return current known shipments for an order
 cover solution with unit tests
 * no interaction with network or database is needed. A solution that keeps everything in memory is sufficient.
 
+
+### To run locally
+
+This module is built in `go 1.16`
+
+Install go
+
+Download dependencies with `go mod download`
+
+Modify the main.go to cover any use case from the readme file above.
+
+Run `go run .`
+
